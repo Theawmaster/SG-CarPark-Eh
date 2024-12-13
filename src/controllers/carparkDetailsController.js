@@ -55,7 +55,7 @@ export const getCarparkDetailsWithAvailability = async (req, res) => {
 
     console.log('Filtered Availability Data:', matchingAvailability);
 
-    // Check for multiple matching records and sum lotsAvailable
+    // Sum lotsAvailable, handling undefined values gracefully
     const totalLotsAvailable = matchingAvailability.reduce((total, avail) => {
       const lots = parseInt(avail.lotsAvailable, 10);
       return total + (isNaN(lots) ? 0 : lots);
@@ -74,15 +74,30 @@ export const getCarparkDetailsWithAvailability = async (req, res) => {
       parkCapacity: 0,
     };
 
+    // Helper to generate descriptive rates
+    const groupRates = (rates) => {
+      const validRates = rates
+        .map((rate) => {
+          const match = rate.match(/\$\d+(\.\d+)?/); // Extract valid rates
+          return match ? parseFloat(match[0].slice(1)) : null;
+        })
+        .filter((rate) => rate !== null); // Remove undefined/null
+
+      if (validRates.length === 0) return 'N/A';
+      const uniqueRates = [...new Set(validRates)];
+      if (uniqueRates.length === 1) return `$${uniqueRates[0].toFixed(2)}`; // Single value if all rates are the same
+      return `$${Math.min(...validRates).toFixed(2)} - $${Math.max(...validRates).toFixed(2)}`;
+    };
+
     // Aggregate rates and other details
     matchingDetails.forEach((detail) => {
-      if (!aggregatedDetails.weekdayRate.includes(detail.weekdayRate)) {
+      if (detail.weekdayRate && detail.startTime && detail.endTime) {
         aggregatedDetails.weekdayRate.push(`${detail.weekdayRate} (${detail.startTime} - ${detail.endTime})`);
       }
-      if (!aggregatedDetails.saturdayRate.includes(detail.satdayRate)) {
+      if (detail.satdayRate && detail.startTime && detail.endTime) {
         aggregatedDetails.saturdayRate.push(`${detail.satdayRate} (${detail.startTime} - ${detail.endTime})`);
       }
-      if (!aggregatedDetails.sundayPHRate.includes(detail.sunPHRate)) {
+      if (detail.sunPHRate && detail.startTime && detail.endTime) {
         aggregatedDetails.sundayPHRate.push(`${detail.sunPHRate} (${detail.startTime} - ${detail.endTime})`);
       }
 
@@ -96,10 +111,10 @@ export const getCarparkDetailsWithAvailability = async (req, res) => {
       aggregatedDetails.parkCapacity = detail.parkCapacity || 0;
     });
 
-    // Concatenate rates into strings
-    aggregatedDetails.weekdayRate = aggregatedDetails.weekdayRate.join(', ');
-    aggregatedDetails.saturdayRate = aggregatedDetails.saturdayRate.join(', ');
-    aggregatedDetails.sundayPHRate = aggregatedDetails.sundayPHRate.join(', ');
+    // Generate succinct rates
+    aggregatedDetails.weekdayRate = groupRates(aggregatedDetails.weekdayRate);
+    aggregatedDetails.saturdayRate = groupRates(aggregatedDetails.saturdayRate);
+    aggregatedDetails.sundayPHRate = groupRates(aggregatedDetails.sundayPHRate);
 
     res.status(200).json(aggregatedDetails);
   } catch (error) {

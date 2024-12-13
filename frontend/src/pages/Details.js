@@ -110,7 +110,7 @@ const Details = () => {
         </tbody>
       </table>
       <p>
-        Click{' '}
+      👉🏻 Click{' '}
         <a
           href={`https://maps.google.com/?q=${carparkName}`}
           target="_blank"
