@@ -4,6 +4,7 @@ import uraAvailabilityRoutes from './routes/uraAvailabilityRoutes.js';
 import uraCarpardetailsRoutes from './routes/uraCarparkDetailsRoutes.js';
 import uraSeaonParkingRoutes from './routes/uraSeasonCarparkRoutes.js';
 import carparkAggregatorRoutes from './routes/carparkAggregatorRoutes.js';
+import carparkRoutes from './routes/carparkRoutes.js';
 
 
 const app = express();
@@ -22,7 +23,7 @@ app.use('/api', uraSeaonParkingRoutes);
 // Carpark aggregator endpoint under /api
 app.use('/api', carparkAggregatorRoutes);
 
-
-
+// Carpark details endpoint under /api
+app.use('/api', carparkRoutes);
 
 export default app;
