@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css'; // Import the CSS file
 
 const Home = () => {
   const [vehicleType, setVehicleType] = useState('Car');
+  const navigate = useNavigate();
 
   const handleVehicleChange = (event) => {
     setVehicleType(event.target.value);
   };
 
+
   const handleSearchClick = () => {
-    alert('Search Carpark clicked');
+    navigate('/Search', {
+      state: {
+        vehicleType
+      },
+    });
   };
 
   const handleAllCarparksClick = () => {
-    alert('View All Carparks clicked');
+    alert('View All Carparks clicked, but have yet to be implemented...');
   };
 
   const handleNearbyCarparksClick = () => {
-    alert('Find Nearby Carparks clicked');
+    alert('Find Nearby Carparks clicked, but have yet to be implemented...');
   };
 
   return (

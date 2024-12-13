@@ -1,51 +1,49 @@
-import { fetchCarparkAvailability } from './uraAvailabilityService.js';
 import { fetchCarparkDetails } from './uraCarparkDetailsService.js';
 
 /**
- * Aggregates data from availability and details endpoints to produce a simplified structure:
- * [
- *   {
- *     "carparkCode": "A0004",
- *     "carparkName": "ALIWAL STREET",
- *     "availableLots": 20,
- *     "parkCapacity": 69,
- *     "vehCat": "Car",
- *     "weekdayRate": "$0.50"
- *   },
- *   ...
- * ]
+ * Fetches and filters carpark details to return unique carpark names.
  */
-export const fetchAggregatedCarparkData = async () => {
-  // Fetch raw data
-  const [availabilityData, detailsData] = await Promise.all([
-    fetchCarparkAvailability(),
-    fetchCarparkDetails()
-  ]);
+export const fetchAggregatedCarparkData = async (vehicleType, query) => {
+  try {
+    // Fetch carpark details
+    const detailsData = await fetchCarparkDetails();
 
-  // Convert details into a map for quick lookup by ppCode
-  const detailsMap = {};
-  for (const detail of detailsData) {
-    // Normalize codes if needed. Assuming ppCode and carparkNo can be directly matched.
-    detailsMap[detail.ppCode] = detail;
+    console.log('Details Data:', detailsData); // Debugging log
+
+    // Use a Set to store unique carpark names
+    const uniqueCarparks = new Set();
+
+    // Filter and map the details data
+    const filteredData = detailsData.reduce((result, detail) => {
+      const ppName = detail.ppName.trim();
+      const vehCat = detail.vehCat.trim().toLowerCase();
+
+      // Filter by vehicleType
+      if (vehicleType && vehCat !== vehicleType.toLowerCase()) {
+        return result;
+      }
+
+      // Filter by query
+      if (query && !ppName.toLowerCase().includes(query.toLowerCase())) {
+        return result;
+      }
+
+      // Add carpark name to the Set if it is unique
+      if (!uniqueCarparks.has(ppName)) {
+        uniqueCarparks.add(ppName);
+        result.push({ carparkName: ppName });
+      }
+
+      return result;
+    }, []);
+
+    // Return filtered and unique carpark names
+    return {
+      total: filteredData.length,
+      results: filteredData,
+    };
+  } catch (error) {
+    console.error('Error in fetchAggregatedCarparkData:', error);
+    throw new Error('Failed to aggregate carpark data.');
   }
-
-  const aggregated = [];
-
-  for (const avail of availabilityData) {
-    const code = avail.carparkNo; // from availability
-    const detail = detailsMap[code];
-
-    if (detail) {
-      aggregated.push({
-        carparkCode: detail.ppCode,
-        carparkName: detail.ppName.trim(),       // assuming trim to clean up trailing spaces
-        availableLots: parseInt(avail.lotsAvailable, 10),
-        parkCapacity: detail.parkCapacity,
-        vehCat: detail.vehCat,
-        weekdayRate: detail.weekdayRate
-      });
-    }
-  }
-
-  return aggregated;
 };

@@ -11,6 +11,7 @@ describe('GET /api/carpark-details', () => {
     if (response.body.length > 0) {
       const carpark = response.body[0];
       expect(carpark).toHaveProperty('ppCode');
+      expect(carpark).toHaveProperty('ppName');
       expect(carpark).toHaveProperty('weekdayRate');
       expect(carpark).toHaveProperty('vehCat');
       expect(carpark).toHaveProperty('weekdayRate');
