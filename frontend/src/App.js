@@ -4,6 +4,7 @@ import Introductory from './pages/Introductory';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Details from './pages/Details';
+import AllListed from './pages/AllListed';
 import './styles/Global.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/Search" element={<Search />} />
         <Route path="/Details" element={<Details />} />
+        <Route path="/AllListed" element={<AllListed />} />
       </Routes>
       <p className="credits">Credits: Singapore URA Dataset</p>
     </div>

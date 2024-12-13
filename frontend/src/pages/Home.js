@@ -12,15 +12,11 @@ const Home = () => {
 
 
   const handleSearchClick = () => {
-    navigate('/Search', {
-      state: {
-        vehicleType
-      },
-    });
+    navigate('/Search', { state: { vehicleType } });
   };
 
   const handleAllCarparksClick = () => {
-    alert('View All Carparks clicked, but have yet to be implemented...');
+    navigate('/AllListed', { state: { vehicleType } });
   };
 
   const handleNearbyCarparksClick = () => {
