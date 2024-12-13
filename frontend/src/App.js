@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Introductory from './pages/Introductory';
 import Home from './pages/Home';
 import Search from './pages/Search';
+import Details from './pages/Details';
 import './styles/Global.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Introductory />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Search" element={<Search />} />
+        <Route path="/Details" element={<Details />} />
       </Routes>
       <p className="credits">Credits: Singapore URA Dataset</p>
     </div>

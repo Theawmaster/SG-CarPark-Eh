@@ -41,16 +41,21 @@ const Search = () => {
     return () => clearTimeout(debounceTimeout);
   }, [searchTerm, vehicleType]);
 
+  const handleResultClick = (result) => {
+    // Navigate to Details.js with state
+    navigate('/details', { state: { carparkDetails: result } });
+  };
+
   useEffect(() => {
     console.log('Results state updated:', results);
   }, [results]);
 
   return (
     <div className="search-container">
-      <button className="back-button" onClick={() => navigate(-1)}>
+      <button className="back-button2" onClick={() => navigate(-1)}>
         ← Back
       </button>
-      <h1>CarParks for {vehicleType}</h1>
+      <h2>CarParks for {vehicleType}</h2>
       <div className="search-section">
         <input
           type="text"
@@ -66,7 +71,7 @@ const Search = () => {
         {!loading && !error && results && results.length > 0 ? (
           <ul className="results-list">
             {results.map((result, index) => (
-              <li key={index} className="result-item">
+              <li key={index} className="result-item" onClick={() => handleResultClick(result)}>
                 {result.carparkName}
               </li>
             ))}
