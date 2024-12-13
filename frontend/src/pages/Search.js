@@ -42,8 +42,8 @@ const Search = () => {
   }, [searchTerm, vehicleType]);
 
   const handleResultClick = (result) => {
-    // Navigate to Details.js with state
-    navigate('/details', { state: { carparkDetails: result } });
+    console.log('Navigating to details with carparkName:', result.carparkName);
+    navigate('/details', { state: { carparkName: result.carparkName, vehicleType } });
   };
 
   useEffect(() => {

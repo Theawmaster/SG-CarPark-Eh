@@ -1,18 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Details.css';
 
 const Details = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { carparkDetails } = location.state || {};
+  const { carparkName, vehicleType } = location.state || {}; // Fetch vehicleType from state if passed
+
+  const [carparkDetails, setCarparkDetails] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!carparkName) {
+      setError('No carpark name provided.');
+      setLoading(false);
+      return;
+    }
+
+    const fetchCarparkDetails = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:4000/api/carpark-info?carparkName=${encodeURIComponent(
+            carparkName
+          )}&vehicleType=${vehicleType || ''}`
+        );
+        if (!response.ok) {
+          throw new Error('Failed to fetch carpark details.');
+        }
+        const data = await response.json();
+        setCarparkDetails(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCarparkDetails();
+  }, [carparkName, vehicleType]);
+
+  if (loading) {
+    return <p>Loading carpark details...</p>;
+  }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <p>Error: {error}</p>
+        <button className="back-button3" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
+      </div>
+    );
+  }
 
   if (!carparkDetails) {
     return <p>No carpark details available.</p>;
   }
 
   const {
-    carparkName,
     availableLots,
     weekdayRate,
     saturdayRate,
@@ -20,6 +67,13 @@ const Details = () => {
     parkingSystem,
     parkCapacity,
   } = carparkDetails;
+
+  // Format parkCapacity for rendering
+  const formattedParkCapacity =
+  typeof parkCapacity === 'object'
+    ? parkCapacity[vehicleType] || 'N/A' // Extract value based on vehicleType
+    : parkCapacity;
+
 
   return (
     <div className="details-container">
@@ -51,12 +105,20 @@ const Details = () => {
           </tr>
           <tr>
             <td>Park Capacity</td>
-            <td>{parkCapacity || 'N/A'}</td>
+            <td>{formattedParkCapacity || 'N/A'}</td>
           </tr>
         </tbody>
       </table>
       <p>
-        Click <a href={`https://maps.google.com/?q=${carparkName}`} target="_blank" rel="noopener noreferrer">here</a> for directions.
+        Click{' '}
+        <a
+          href={`https://maps.google.com/?q=${carparkName}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>{' '}
+        for directions.
       </p>
     </div>
   );
