@@ -7,7 +7,7 @@ SG CarPark Eh is a web application that helps users locate carparks in Singapore
 ## Features
 
 - **Search Carparks**: Find carparks by street name or postal code.
-- **Nearby Carparks**: Discover carparks within a 2km radius of your location.
+- **Nearby Carparks**: Discover carparks within a 3km radius of your location.
 - **All Carparks Listed**: View a complete list of carparks.
 - **Responsive Design**: Optimized for desktop and mobile users.
 - **Dark Mode**: Toggle between light and dark themes for a personalized experience.
