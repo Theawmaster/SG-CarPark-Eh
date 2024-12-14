@@ -23,19 +23,20 @@ SG CarPark Eh is a web application that helps users locate carparks in Singapore
 
 ## Project Structure
 
+```yaml
 SG-CarPark-Eh:
   frontend: # Frontend codebase
-    build: # Compiled production build
-    public: # Static assets (favicon, index.html)
-    src: # React source code
-      pages: # React pages
+    build:            # Compiled production build
+    public:           # Static assets (favicon, index.html)
+    src:              # React source code
+      pages:          # React pages
         - AllListed.js
         - Details.js
         - Find.js
         - Home.js
         - Introductory.js
         - Search.js
-      styles: # CSS files
+      styles:         # CSS files
         - AllListed.css
         - Details.css
         - Find.css
@@ -43,23 +44,21 @@ SG-CarPark-Eh:
         - Home.css
         - Introductory.css
         - Search.css
-      - App.js # Main app component
-      - index.js # Renders React app
+      - App.js        # Main app component
+      - index.js      # Renders React app
       - reportWebVitals.js # Performance monitoring
-    package.json:
-    .gitignore:
+    package.json:      # Frontend dependencies
+    .gitignore:        # Git ignore rules
   backend: # Backend codebase
-    controllers: # API controllers
-    routes: # API route definitions
-    services: # API utilities
-    - app.js # Express app setup
-    - server.js # Server entry point
-  .env: # Environment variables
-  LICENSE: # Project license
-  README.md: # Project documentation
-
-
-
+    controllers:       # API controllers
+    routes:            # API route definitions
+    services:          # API utilities
+    - app.js           # Express app setup
+    - server.js        # Server entry point
+  .env:                # Environment variables
+  LICENSE:             # Project license
+  README.md:           # Project documentation
+```
 ---
 
 ## API Endpoints
