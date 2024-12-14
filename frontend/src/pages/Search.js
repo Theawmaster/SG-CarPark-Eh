@@ -40,7 +40,7 @@ const Search = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:4000/api/aggregated-carparks?vehicleType=${vehicleType}&query=${searchTerm}`
+          `https://sg-carpark-eh.onrender.com/api/aggregated-carparks?vehicleType=${vehicleType}&query=${searchTerm}`
         );
         const data = await response.json();
         console.log('Fetched data:', data); // Debugging log

@@ -48,7 +48,7 @@ const Details = () => {
 
             try {
                 const response = await fetch(
-                    `http://localhost:4000/api/carpark-info?carparkName=${encodeURIComponent(
+                    `https://sg-carpark-eh.onrender.com/api/carpark-info?carparkName=${encodeURIComponent(
                         cleanCarparkName
                     )}&vehicleType=${vehicleType || ""}`
                 );
