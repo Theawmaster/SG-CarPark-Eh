@@ -1,17 +1,159 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-  }
+/**
+ * Global Styles and Theming
+ * --------------------------
+ * This file contains:
+ * - Global styles for the application
+ * - Theme variables for light and dark modes
+ * - Responsive design adjustments for various screen sizes
+ */
 
-  .credits {
-    text-align: center;
-    margin-top: 50px; /* Adds 50px spacing above the credits */
-    font-size: 0.9em; /* Optional: Adjust font size if needed */
-    color: gray; /* Optional: Set a subtle color */
-  }
-  
-  
+/* ---- Global Body Styling ---- */
+/* General styles for the body element */
+body {
+  font-family: Arial, sans-serif; /* Default font for the app */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  background-color: #f4f4f4; /* Light gray background */
+  text-align: center; /* Centers text globally */
+}
+
+/* ---- Credits Section ---- */
+/* Styling for credits at the bottom of the page */
+.credits {
+  text-align: center; /* Centers the credits text */
+  margin-top: 50px; /* Adds spacing above the credits */
+  font-size: 0.9em; /* Smaller font size */
+  color: gray; /* Subtle text color for less emphasis */
+}
+
+/* ---- Theming Variables ---- */
+/**
+* CSS variables for light and dark themes.
+* Use `:root` for light mode defaults and `.dark-mode` for overrides.
+*/
+:root {
+--bg-color: #ffffff; /* Default background color */
+--text-color: #000000; /* Default text color */
+--border-color: #ddd; /* Default border color */
+--button-bg-color: #f8f9fa; /* Default button background */
+--button-text-color: #000; /* Default button text color */
+}
+
+/* Variables for dark mode */
+body.dark-mode {
+--bg-color: #121212; /* Dark background */
+--text-color: #ffffff; /* White text */
+--border-color: #333; /* Dark border */
+--button-bg-color: #333; /* Dark button background */
+--button-text-color: #fff; /* White button text */
+}
+
+/* ---- General Theme Styling ---- */
+/* Applies theme variables to the body */
+body {
+background-color: var(--bg-color); /* Dynamic background */
+color: var(--text-color); /* Dynamic text color */
+transition: background-color 0.3s, color 0.3s; /* Smooth transitions for theme changes */
+}
+
+/* ---- Slide Switch Styling ---- */
+/**
+* Styles for the dark mode toggle switch.
+* Includes slider and transition effects for smooth toggling.
+*/
+.switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+
+.switch input {
+opacity: 0; /* Hides the input */
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: var(--border-color); /* Matches the border color */
+transition: 0.4s; /* Smooth transition for the slider */
+border-radius: 24px; /* Round edges */
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: var(--bg-color); /* Matches the background */
+transition: 0.4s; /* Smooth transition for the slider knob */
+border-radius: 50%; /* Circular knob */
+}
+
+/* Active (checked) styles for the slider */
+input:checked + .slider {
+background-color: var(--text-color); /* Matches the text color */
+}
+
+input:checked + .slider:before {
+transform: translateX(26px); /* Moves the knob */
+}
+
+/* ---- Responsive Design ---- */
+/* Styles for small screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+body {
+  font-size: 14px; /* Adjusts the font size */
+}
+
+header {
+  flex-direction: column; /* Stacks header items vertically */
+  align-items: center; /* Centers items */
+  padding: 5px;
+}
+
+header img {
+  height: 60px; /* Adjusts logo size */
+}
+
+.title {
+  font-size: 18px; /* Adjusts title size */
+}
+
+.dark-mode-toggle {
+  margin-top: 10px; /* Adds spacing for the toggle */
+}
+
+.button-group button {
+  font-size: 14px; /* Adjusts button text size */
+  padding: 8px 12px; /* Adjusts button padding */
+}
+}
+
+/* Further adjustments for very small devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+header img {
+  height: 50px; /* Reduces logo size */
+}
+
+.title {
+  font-size: 16px; /* Smaller title font */
+}
+
+.button-group {
+  flex-direction: column; /* Stacks buttons vertically */
+}
+
+.button-group button {
+  width: 100%; /* Makes buttons full-width */
+  margin-bottom: 10px; /* Adds spacing between buttons */
+}
+}

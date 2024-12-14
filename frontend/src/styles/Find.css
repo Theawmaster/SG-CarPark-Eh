@@ -1,98 +1,118 @@
-/* Container Styling */
+/**
+ * Styles for the "Find" Component
+ * --------------------------------
+ * This file contains styles for the "Find" page, including:
+ * - Container layout and general text styling
+ * - Buttons for geolocation prompt
+ * - Error and loading messages
+ * - Table for displaying carparks
+ * - Back button for navigation
+ */
+
+/* ---- Container Styling ---- */
+/* Applies general layout and font styles for the page */
 .find-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    text-align: center;
-  }
+  font-family: Arial, sans-serif; /* Default font family */
+  padding: 20px; /* Adds spacing inside the container */
+  text-align: center; /* Centers the text content */
+}
 
-  /* Geolocation Prompt Styling */
-  .location-prompt {
-    margin: 20px 0;
-  }
-  
-  .allow-button,
-  .deny-button {
-    margin: 10px;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .allow-button {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .allow-button:hover {
-    background-color: #45a049;
-  }
-  
-  .deny-button {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .deny-button:hover {
-    background-color: #d32f2f;
-  }
-  
-  /* Error Message */
-  .error-message {
-    color: red;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  /* Loading Message */
-  .loading {
-    font-style: italic;
-    margin-top: 20px;
-  }
-  
-  /* Carpark Table */
-  .carpark-table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 80%;
-  }
-  
-  .carpark-table th,
-  .carpark-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .carpark-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  .carpark-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .carpark-table tr:hover {
-    background-color: #ddd;
-  }
+/* ---- Geolocation Prompt Styling ---- */
+/* Adds spacing and styles for prompt buttons */
+.location-prompt {
+  margin: 20px 0; /* Vertical spacing */
+}
 
-  .back-button5 {
-    position: fixed;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+/* Shared button styles */
+.allow-button,
+.deny-button {
+  margin: 10px; /* Adds spacing between buttons */
+  padding: 10px 15px; /* Adds internal spacing for button content */
+  border: none; /* Removes default border */
+  cursor: pointer; /* Pointer cursor for buttons */
+}
 
-  .back-button5:hover {
-    background-color:  #007bff;
-    color: white;
-  }
-  
+/* Allow button (positive action) */
+.allow-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+}
+
+/* Hover effect for allow button */
+.allow-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Deny button (negative action) */
+.deny-button {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+}
+
+/* Hover effect for deny button */
+.deny-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* ---- Error and Loading Messages ---- */
+/* Error message styling */
+.error-message {
+  color: red; /* Red text for errors */
+  font-weight: bold; /* Makes the text bold */
+  margin-top: 20px; /* Adds spacing above the message */
+}
+
+/* Loading message styling */
+.loading {
+  font-style: italic; /* Italic text for loading indicator */
+  margin-top: 20px; /* Adds spacing above the message */
+}
+
+/* ---- Carpark Table ---- */
+/* Table layout for displaying carpark information */
+.carpark-table {
+  margin: 20px auto; /* Centers the table and adds vertical spacing */
+  border-collapse: collapse; /* Removes spacing between table cells */
+  width: 80%; /* Limits the table width */
+}
+
+/* Table cell styling */
+.carpark-table th,
+.carpark-table td {
+  border: 1px solid; /* Adds a thin border around cells */
+  padding: 8px; /* Adds internal spacing */
+}
+
+/* Header row styling */
+.carpark-table th {
+  font-weight: bold; /* Makes header text bold */
+}
+
+/* Hover effect for table rows */
+.carpark-table tr:hover {
+  background-color: #ddd; /* Light gray background on hover */
+}
+
+/* ---- Back Button Styling ---- */
+/* Styles for the back button */
+.back-button5 {
+  position: absolute;
+  left: 20px; /* Aligns the button to the left */
+  padding: 10px 20px; /* Adds internal spacing */
+  font-size: 1.2em; /* Enlarges the font size */
+  border: 2px solid #007bff; /* Blue border */
+  background-color: white; /* White background */
+  color: #007bff; /* Matches text color with border */
+  border-radius: 10px; /* Rounds the button edges */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Centers the text */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically centers content */
+  gap: 10px; /* Adds spacing between icon and text */
+}
+
+/* Hover effect for back button */
+.back-button5:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}

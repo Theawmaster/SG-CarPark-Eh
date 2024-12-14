@@ -1,69 +1,96 @@
-/* Introductory.js Styles */
+/**
+ * Styles for Introductory.js Component
+ * -------------------------------------
+ * This file contains styles for the "Introductory" page, including:
+ * - Title styling
+ * - Layout and container styles
+ * - Styling for the introduction box, lists, and button
+ */
 
-/* Title styles */
-.title {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-/* Parent container styles */
+/* ---- Title Styles ---- */
+/**
+ * Styles for the title element in the Introductory box.
+ */
+ .title {
+  font-size: 2em; /* Large font size for emphasis */
+  margin-bottom: 20px; /* Adds spacing below the title */
+  text-align: center; /* Centers the text horizontally */
+}
+
+/* ---- Parent Container Styles ---- */
+/**
+* Styles for the container wrapping the introduction box.
+* Ensures horizontal and optional vertical centering.
+*/
 .parent-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically (if needed) */
-  min-height: 40vh; /* Optional: Full page height */
+  display: flex; /* Flex layout for alignment */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  min-height: 40vh; /* Optional: Adjust height for layout balance */
 }
 
-/* Intro box styles */
+/* ---- Intro Box Styles ---- */
+/**
+* Styles for the introduction box containing the guide content.
+* Includes padding, borders, and shadows for a polished look.
+*/
 .intro-box {
-  border: 1px solid black;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  text-align: center;
-  width: fit-content; /* Ensure the box size adjusts to content */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some depth */
+  border: 1px solid; /* Thin border for structure */
+  padding: 20px; /* Internal spacing */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Centers the text inside the box */
+  width: fit-content; /* Adjusts the box size to the content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-  /* List styles */
-  .intro-list {
-    text-align: left;
-    padding: 20;
-    margin: 20px 0;
-  }
-  
-  .intro-list li {
-    margin-bottom: 15px; /* Add spacing between each list item */
-    font-size: 1.0em;
-  }
-  
-  /* Credits text */
-  .credits {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: gray;
-  }
-  
-  /* Button styles */
-  .button1 {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    margin: auto;
-    gap: 10px;
-    
-  }
-  
-  .button1:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
+/* ---- List Styles ---- */
+/**
+* Styles for the ordered list displaying the guide content.
+*/
+.intro-list {
+  text-align: left; /* Aligns text to the left */
+  padding: 20; /* Adds internal spacing */
+  margin: 20px 0; /* Vertical spacing */
+}
+
+/* Individual list item styling */
+.intro-list li {
+  margin-bottom: 15px; /* Adds spacing between list items */
+  font-size: 1.0em; /* Standard font size */
+}
+
+/* ---- Credits Text ---- */
+/**
+* Styles for the credits text at the bottom of the Introductory box.
+*/
+.credits {
+  margin-top: 20px; /* Adds spacing above the credits */
+  font-size: 0.9em; /* Smaller font size for less emphasis */
+  color: gray; /* Subtle gray color */
+}
+
+/* ---- Button Styles ---- */
+/**
+* Styles for the primary button in the Introductory box.
+* Includes hover effects for interaction feedback.
+*/
+.button1 {
+  padding: 10px 20px; /* Adds internal spacing for a larger clickable area */
+  font-size: 1.2em; /* Slightly larger font for readability */
+  border: 2px solid #007bff; /* Blue border */
+  background-color: white; /* White background */
+  color: #007bff; /* Blue text color */
+  border-radius: 10px; /* Rounded edges */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Centers button text */
+  display: flex; /* Flex layout for alignment */
+  align-items: center; /* Vertically centers text and icon */
+  margin: auto; /* Centers the button horizontally */
+  gap: 10px; /* Adds spacing between icon and text (if any) */
+}
+
+/* Hover effect for the button */
+.button1:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}

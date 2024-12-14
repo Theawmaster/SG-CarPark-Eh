@@ -1,81 +1,120 @@
-/* Home.js Styles */
+/**
+ * Styles for Home.js Component
+ * -----------------------------
+ * This file contains styles for the "Home" page, including:
+ * - Header and logo styling
+ * - Vehicle selection section
+ * - Button group styling
+ * - Footer styling
+ */
 
-/* Header styles */
-.header {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  .title {
-    font-size: 2.5em;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .logo {
-    font-size: 1.2em;
-    background: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 50%;
-  }
-  
-  /* Vehicle selection styles */
-  .vehicle-selection {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  gap: 20px; /* Space between the heading and labels */
-  margin: 20px 0;
-  justify-content: center;
-  }
+/* ---- Header Styles ---- */
+/**
+ * Styles for the page header, including the title and logo.
+ */
+ .header {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px 0; /* Vertical spacing */
+  border-bottom: 2px solid #ddd; /* Subtle bottom border */
+}
 
-  .vehicle-options {
-    display: flex;
-    gap: 10px; /* Space between each label */
-  }
-  
-  .vehicle-options label {
-    display: flex;
-    align-items: center; /* Align the text and radio buttons */
-    gap: 5px;
-  }
-  
-  /* Button group for Home.js */
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px auto;
-    max-width: 300px;
-  }
-  
-  .button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .button:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  /* Footer styles */
-  .footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: gray;
-  }
-  
+.title {
+  font-size: 2.5em; /* Large font size for the title */
+  margin: 0; /* Removes default margin */
+  display: flex; /* Flex layout for alignment */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  gap: 10px; /* Space between title text and logo */
+}
+
+/* Introductory icon for help */
+.introductory-icon {
+  margin-top: 10px; /* Adds spacing above the icon */
+  border: 2px solid #007bff; /* Blue border */
+  background-color: white; /* White background */
+  color: #007bff; /* Blue text color */
+  border-radius: 10px; /* Rounded edges */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.introductory-icon:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.2em; /* Slightly larger font size */
+  background: #007bff; /* Blue background */
+  color: white; /* White text */
+  padding: 5px 10px; /* Internal spacing */
+  border-radius: 50%; /* Circular shape */
+}
+
+/* ---- Vehicle Selection Styles ---- */
+/**
+* Styles for the vehicle selection section, including radio button options.
+*/
+.vehicle-selection {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Centers items vertically */
+  gap: 20px; /* Space between heading and options */
+  margin: 20px 0; /* Vertical spacing */
+  justify-content: center; /* Centers the entire section */
+}
+
+/* Radio button group for vehicle types */
+.vehicle-options {
+  display: flex; /* Horizontal layout */
+  gap: 10px; /* Space between each option */
+}
+
+/* Label styling for radio buttons */
+.vehicle-options label {
+  display: flex; /* Aligns text and radio buttons */
+  align-items: center; /* Centers the text and button vertically */
+  gap: 5px; /* Space between button and label text */
+}
+
+/* ---- Button Group Styles ---- */
+/**
+* Styles for the action buttons (e.g., Search, All Carparks, Nearby Carparks).
+*/
+.button-group {
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stacks buttons vertically */
+  gap: 15px; /* Space between buttons */
+  margin: 20px auto; /* Centers the group with vertical spacing */
+  max-width: 300px; /* Limits the group width */
+}
+
+/* Shared button styling */
+.button {
+  padding: 10px 20px; /* Internal spacing for larger clickable area */
+  font-size: 1.2em; /* Slightly larger font size */
+  border: 2px solid #007bff; /* Blue border */
+  background-color: white; /* White background */
+  color: #007bff; /* Blue text color */
+  border-radius: 10px; /* Rounded edges */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Centers the button text */
+  display: flex; /* Flex layout for content alignment */
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Space between icon and text */
+}
+
+/* Hover effect for buttons */
+.button:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* ---- Footer Styles ---- */
+/**
+* Styles for the footer section containing additional information or credits.
+*/
+.footer {
+  margin-top: 20px; /* Adds spacing above the footer */
+  font-size: 0.9em; /* Smaller font size for less emphasis */
+  color: gray; /* Subtle gray text */
+}

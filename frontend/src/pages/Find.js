@@ -2,6 +2,19 @@ import React, { useState, useEffect } from "react";
 import "../styles/Find.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
+/**
+ * React component to find nearby carparks based on the user's current location.
+ *
+ * @component
+ * @returns {JSX.Element} A table listing nearby carparks or error/loading messages.
+ *
+ * @description
+ * - Uses the browser's Geolocation API to fetch the user's current coordinates.
+ * - Sends a request to the backend API to retrieve nearby carparks based on the location and selected vehicle type.
+ * - Deduplicates and filters carpark data before displaying it in a table.
+ * - Allows the user to navigate to a detailed view for a specific carpark.
+ */
+
 const Find = () => {
     const [carparks, setCarparks] = useState([]);
     const [error, setError] = useState("");
@@ -10,6 +23,11 @@ const Find = () => {
     const navigate = useNavigate();
 
     const vehicleType = location.state?.vehicleType || "Car";
+
+    /**
+     * Fetches nearby carparks using the user's current location.
+     * Deduplicates and filters the carpark data and handles errors if location access is unavailable.
+     */
 
     const fetchNearbyCarparks = () => {
         if (!navigator.geolocation) {
@@ -31,7 +49,6 @@ const Find = () => {
                     const data = await response.json();
 
                     if (data.nearbyCarparks && data.nearbyCarparks.length > 0) {
-                        console.log("Fetched Carpark Data:", data.nearbyCarparks);
 
                         // Deduplicate by ppName and filter only valid carparks
                         const uniqueCarparks = Array.from(
@@ -59,8 +76,13 @@ const Find = () => {
         fetchNearbyCarparks();
     }, []);
 
+    /**
+     * Navigates to the carpark details page with the selected carpark name.
+     *
+     * @param {string} carparkName - The name of the selected carpark.
+     */
+
     const handleCarparkClick = (carparkName) => {
-        console.log("Navigating to details with carparkName:", carparkName);
         navigate("/details", { state: { carparkName, vehicleType } });
     };
 

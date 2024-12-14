@@ -1,3 +1,26 @@
+/**
+ * Controller to get carpark details along with availability data.
+ * This function fetches carpark details and availability, filters the data based on carpark name and vehicle type,
+ * and returns aggregated details including available lots, rates, parking system, and capacity.
+ *
+ * @async
+ * @function getCarparkDetailsWithAvailability
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} req.query - Query parameters from the HTTP request.
+ * @param {string} req.query.carparkName - Name of the carpark to search for (case-insensitive).
+ * @param {string} req.query.vehicleType - Vehicle type to filter (e.g., 'Car', 'Motorcycle', 'Heavy Vehicle').
+ * @param {Object} res - The HTTP response object.
+ * @returns {void} Sends a JSON response containing aggregated carpark details or an error message.
+ *
+ * @example
+ * // Example API request:
+ * // GET /api/carparks/detailsWithAvailability?carparkName=Central Mall&vehicleType=Car
+ *
+ * @throws {400} If carparkName or vehicleType is missing, or an invalid vehicle type is provided.
+ * @throws {404} If no matching carpark details are found for the specified name and vehicle type.
+ * @throws {500} If there is an error while fetching carpark details or availability data.
+ */
+
 import { fetchCarparkDetails } from '../services/uraCarparkDetailsService.js';
 import { fetchCarparkAvailability } from '../services/uraAvailabilityService.js';
 
@@ -38,13 +61,11 @@ export const getCarparkDetailsWithAvailability = async (req, res) => {
     );
 
     if (matchingDetails.length === 0) {
-      console.log('No matching details found for the given carpark name and vehicle type.');
       return res.status(404).json({ error: 'Carpark not found' });
     }
 
     // Extract ppCodes to match with carparkNo in availability data
     const ppCodes = matchingDetails.map((detail) => detail.ppCode.trim().toLowerCase());
-    console.log('PP Codes:', ppCodes);
 
     // Filter availability data by ppCodes and lotType
     const matchingAvailability = availabilityData.filter(
@@ -52,8 +73,6 @@ export const getCarparkDetailsWithAvailability = async (req, res) => {
         ppCodes.includes(avail.carparkNo.trim().toLowerCase()) &&
         avail.lotType.trim().toUpperCase() === lotType
     );
-
-    console.log('Filtered Availability Data:', matchingAvailability);
 
     // Sum lotsAvailable, handling undefined values gracefully
     const totalLotsAvailable = matchingAvailability.reduce((total, avail) => {

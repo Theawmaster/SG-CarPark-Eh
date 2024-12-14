@@ -1,8 +1,32 @@
 import { fetchCarparkDetails } from './uraCarparkDetailsService.js';
 
 /**
- * Fetches and filters carpark details to return unique carpark names.
+ * Fetches and aggregates carpark data, filtering by vehicle type and search query,
+ * and returns a list of unique carpark names.
+ *
+ * @async
+ * @function fetchAggregatedCarparkData
+ * @param {string} [vehicleType] - The type of vehicle to filter carparks (e.g., 'car', 'motorcycle').
+ * @param {string} [query] - A search term to filter carparks by name.
+ * @returns {Promise<Object>} An object containing the total number of results and an array of unique carpark names.
+ *
+ * @example
+ * // Fetch carpark data for 'car' vehicle type with 'central' in the name:
+ * const data = await fetchAggregatedCarparkData('car', 'central');
+ * console.log(data);
+ * // Output:
+ * // {
+ * //   total: 5,
+ * //   results: [
+ * //     { carparkName: 'Central Mall' },
+ * //     { carparkName: 'Central Square' },
+ * //     ...
+ * //   ]
+ * // }
+ *
+ * @throws {Error} If there is an issue fetching or aggregating the carpark data.
  */
+
 export const fetchAggregatedCarparkData = async (vehicleType, query) => {
   try {
     // Fetch carpark details

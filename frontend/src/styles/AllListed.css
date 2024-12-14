@@ -1,62 +1,83 @@
+/**
+ * Styles for the "AllListed" Component
+ * ------------------------------------
+ * This file contains styles for the "AllListed" page, including:
+ * - Container and layout styling
+ * - Back button and dropdown styles
+ * - Error message formatting
+ */
+
+/* ---- Main container styling ---- */
+/* Centers content and adds spacing */
 .all-listed-container {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .back-button4 {
-    position: fixed;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  text-align: center;
+  margin: 20px;
+}
 
-  .back-button4:hover {
-    background-color:  #007bff;
-    color: white;
-  }
-  
-  .dropdown-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    border-radius: 10px;
-  }
-  
-  .dropdown {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border-radius: 10px;
-  }
-  
-  .navigate-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-left: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-  }
+/* ---- Back Button ---- */
+/* Styles for the back button */
+.back-button4 {
+  position: absolute;
+  left: 20px; /* Aligns the button to the left */
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: 2px solid #007bff; /* Blue border color */
+  background-color: white;
+  color: #007bff; /* Text color matches the border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  text-align: center;
+  display: flex; /* Allows icon and text alignment */
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
 
-  .navigate-button:hover {
-    background-color:  #007bff;
-    color: white;
-  }
-  
-  .error-message {
-    color: red;
-    font-weight: bold;
-  }
-  
+/* Hover effect for the back button */
+.back-button4:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* ---- Dropdown Container ---- */
+/* Aligns dropdown and navigation button */
+.dropdown-container {
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  margin-top: 20px;
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Dropdown styling */
+.dropdown {
+  padding: 10px;
+  font-size: 16px; /* Font size for dropdown text */
+  width: 300px; /* Fixed width for dropdown */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* ---- Navigate Button ---- */
+/* Styles for the "View Details" button */
+.navigate-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px; /* Adds space between dropdown and button */
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid #007bff; /* Blue border color */
+  background-color: white;
+  color: #007bff; /* Text color matches border */
+}
+
+/* Hover effect for navigate button */
+.navigate-button:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* ---- Error Message ---- */
+/* Styles for error text */
+.error-message {
+  color: red; /* Bold red text for errors */
+  font-weight: bold;
+}
