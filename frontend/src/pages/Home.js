@@ -10,7 +10,6 @@ const Home = () => {
     setVehicleType(event.target.value);
   };
 
-
   const handleSearchClick = () => {
     navigate('/Search', { state: { vehicleType } });
   };
@@ -23,8 +22,17 @@ const Home = () => {
     navigate('/Find', { state: { vehicleType } });
   };
 
+  const handleIntroductoryClick = () => {
+    navigate('/');
+  };
+
   return (
     <div className="home">
+
+      {/* Introductory Icon */}
+      <button className="introductory-icon" onClick={handleIntroductoryClick}>
+        ❓ Help
+      </button>
 
       <div className="vehicle-selection">
         <h3><span style={{color: 'red'}}>*</span>Type of vehicle:</h3>
