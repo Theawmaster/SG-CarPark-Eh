@@ -13,6 +13,7 @@ import { getNearbyCarparks} from "../controllers/carparkController.js";
 import { getCarparkDetailsWithAvailability } from '../controllers/carparkDetailsController.js';
 
 const router = express.Router();
+const BASE_URL = 'https://sg-carpark-eh.onrender.com';
 
 /**
  * GET /api/carparks
@@ -25,7 +26,7 @@ const router = express.Router();
  */
 
 // Endpoint for nearby carparks
-router.get("/carparks", getNearbyCarparks);
+router.get(`${BASE_URL}/carparks`, getNearbyCarparks);
 
 /**
  * GET /api/carpark-info
@@ -38,6 +39,6 @@ router.get("/carparks", getNearbyCarparks);
  */
 
 // Endpoint for carpark details
-router.get('/carpark-info', getCarparkDetailsWithAvailability);
+router.get(`${BASE_URL}/carpark-info`, getCarparkDetailsWithAvailability);
 
 export default router;

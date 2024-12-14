@@ -10,6 +10,8 @@ import { getCarparkAvailability } from '../controllers/uraAvailabilityController
 
 const router = express.Router();
 
+const BASE_URL = 'https://sg-carpark-eh.onrender.com';
+
 /**
  * GET /api/carpark-availability
  * Fetches real-time availability data for carparks.
@@ -20,7 +22,7 @@ const router = express.Router();
  * @returns {Object} Real-time carpark availability data or an error message.
  */
 
-router.get('/carpark-availability', getCarparkAvailability);
+router.get(`${BASE_URL}/carpark-availability`, getCarparkAvailability);
 
 export default router;
 

@@ -9,6 +9,7 @@ import express from 'express';
 import { getSeasonCarparkDetails } from '../controllers/uraSeasonCarparkController.js';
 
 const router = express.Router();
+const BASE_URL = 'https://sg-carpark-eh.onrender.com';
 
 /**
  * GET /api/season-carpark-details
@@ -20,6 +21,6 @@ const router = express.Router();
  * @returns {Object} Season carpark details or an error message.
  */
 
-router.get('/season-carpark-details', getSeasonCarparkDetails);
+router.get(`${BASE_URL}/season-carpark-details`, getSeasonCarparkDetails);
 
 export default router;

@@ -27,6 +27,7 @@ import { fetchCarparkDetails } from './uraCarparkDetailsService.js';
  * @throws {Error} If there is an issue fetching or aggregating the carpark data.
  */
 
+
 export const fetchAggregatedCarparkData = async (vehicleType, query) => {
   try {
     // Fetch carpark details
