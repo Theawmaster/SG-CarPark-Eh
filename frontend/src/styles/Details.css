@@ -1,63 +1,83 @@
+/**
+ * Styles for the "Details" Component
+ * -----------------------------------
+ * This file contains styles for the "Details" page, including:
+ * - Layout and container styling
+ * - Back button and table styling
+ * - Link hover effects
+ */
+
+/* ---- Main container styling ---- */
+/* Centers the details section and applies padding */
 .details-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  .back-button3 {
-    position: fixed;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .back-button3:hover {
-    background-color:  #007bff;
-    color: white;
-  }
-  
-  .details-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .details-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .details-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .details-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .details-table td:first-child {
-    font-weight: bold;
-  }
-  
-  .details-container p {
-    margin-top: 20px;
-  }
-  
-  .details-container a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .details-container a:hover {
-    text-decoration: underline;
-  }
-  
+  padding: 20px;
+  max-width: 600px; /* Limits the width of the container */
+  margin: 0 auto; /* Centers the container horizontally */
+  font-family: Arial, sans-serif; /* Sets a default font family */
+}
+
+/* ---- Back Button ---- */
+/* Styles for the back button */
+.back-button3 {
+  position: absolute;
+  left: 20px; /* Aligns the button to the left */
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: 2px solid #007bff; /* Blue border color */
+  background-color: white;
+  color: #007bff; /* Matches text color with the border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  display: flex; /* Aligns text and icon */
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+/* Hover effect for the back button */
+.back-button3:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* ---- Details Table ---- */
+/* Full-width table with a clean design */
+.details-table {
+  width: 100%; /* Makes the table take up full width */
+  border-collapse: collapse; /* Removes spacing between table cells */
+}
+
+/* Styles for table cells */
+.details-table td {
+  border: 1px solid; /* Adds a thin border around cells */
+  padding: 8px; /* Adds spacing inside cells */
+}
+
+/* Hover effect for table rows */
+.details-table tr:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+  color: black; /* Black text color on hover */
+}
+
+/* Makes the first column bold */
+.details-table td:first-child {
+  font-weight: bold;
+}
+
+/* ---- Paragraph Styling ---- */
+/* Adds spacing above paragraphs */
+.details-container p {
+  margin-top: 20px;
+}
+
+/* ---- Link Styling ---- */
+/* Default link styles */
+.details-container a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none; /* Removes underline by default */
+}
+
+/* Hover effect for links */
+.details-container a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}

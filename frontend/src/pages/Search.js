@@ -2,6 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Search.css';
 
+/**
+ * Search component for filtering and displaying carparks based on user input.
+ *
+ * @component
+ * @returns {JSX.Element} A searchable interface for finding carparks by name or keyword.
+ *
+ * @description
+ * - Allows users to search for carparks by typing a query.
+ * - Dynamically fetches and displays search results based on the selected vehicle type and input term.
+ * - Provides navigation to detailed carpark information for selected results.
+ */
+
 const Search = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -10,6 +22,11 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  /**
+   * Fetches carpark data based on the search term and vehicle type.
+   * Debounces user input to minimize unnecessary API calls.
+   */
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -40,6 +57,12 @@ const Search = () => {
     const debounceTimeout = setTimeout(fetchResults, 300);
     return () => clearTimeout(debounceTimeout);
   }, [searchTerm, vehicleType]);
+
+  /**
+   * Handles navigation to the carpark details page for a selected result.
+   *
+   * @param {Object} result - The selected carpark result object.
+   */
 
   const handleResultClick = (result) => {
     console.log('Navigating to details with carparkName:', result.carparkName);

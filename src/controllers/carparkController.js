@@ -1,8 +1,32 @@
+/**
+ * Controller to get nearby carparks based on user coordinates.
+ * This function fetches carpark details, filters them by vehicle type, 
+ * and returns those within a specified radius from the provided coordinates.
+ *
+ * @async
+ * @function getNearbyCarparks
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} req.query - Query parameters from the HTTP request.
+ * @param {number} req.query.latitude - Latitude of the user's location.
+ * @param {number} req.query.longitude - Longitude of the user's location.
+ * @param {number} [req.query.radius=3] - Radius in kilometers to search for nearby carparks (default is 3km).
+ * @param {string} req.query.vehicleType - Vehicle type for filtering carparks (e.g., 'car', 'motorcycle').
+ * @param {Object} res - The HTTP response object.
+ * @returns {void} Sends a JSON response containing nearby carparks or an error message.
+ *
+ * @example
+ * // Example API request:
+ * // GET /api/carparks/nearby?latitude=1.3521&longitude=103.8198&radius=5&vehicleType=car
+ *
+ * @throws {400} If latitude, longitude, or vehicleType is missing in the request.
+ * @throws {500} If there is an error while fetching carpark details.
+ */
+
 import { filterCarparksByRadius } from "../services/coordinateService.js";
 import { fetchCarparkDetails } from "../services/uraCarparkDetailsService.js";
 
 export const getNearbyCarparks = async (req, res) => {
-  const { latitude, longitude, radius = 2, vehicleType } = req.query;
+  const { latitude, longitude, radius = 3, vehicleType } = req.query;
 
   if (!latitude || !longitude || !vehicleType) {
     return res

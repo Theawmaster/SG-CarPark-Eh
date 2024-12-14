@@ -2,6 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/Details.css";
 
+/**
+ * React component for displaying detailed information about a specific carpark.
+ *
+ * @component
+ * @returns {JSX.Element} A detailed view of the selected carpark, including available lots, rates, and more.
+ *
+ * @description
+ * - Fetches carpark details from the backend API based on the selected carpark name and vehicle type.
+ * - Displays the details in a table format.
+ * - Provides a link to view the carpark location on Google Maps.
+ */
+
 const Details = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -10,6 +22,11 @@ const Details = () => {
     const [carparkDetails, setCarparkDetails] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    /**
+     * Fetches carpark details when the component mounts.
+     * Logs and handles errors, updating the component state accordingly.
+     */
 
     useEffect(() => {
         console.log("Carpark Name:", carparkName);

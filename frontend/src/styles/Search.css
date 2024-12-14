@@ -1,70 +1,98 @@
-.search-results {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .back-button2 {
-    position: fixed;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: 2px solid #007bff;
-    background-color: white;
-    color: #007bff;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .back-button2:hover {
-    background-color:  #007bff;
-    color: white;
-  }
-  
-  .search-section {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 80%;
-  }
-  
-  .search-input {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
-  }
-  
-  .results-section {
-    border: 1px solid #007bff;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-left: 20px;
-    width: 80%;
-  }
-  
-  .results-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .result-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-  }
-  
-  .result-item:last-child {
-    border-bottom: none;
-  }
+/**
+ * Styles for Search Results Page
+ * --------------------------------
+ * This file contains styles for the "Search" page, including:
+ * - Layout for search results and input field
+ * - Back button styling
+ * - List of search results with hover effects
+ */
 
-  .result-item:hover {
-    background-color: #e0e0e0;
-  }
+/* ---- General Container ---- */
+/**
+ * Styles for the main container of the search results page.
+ */
+ .search-results {
+  padding: 20px; /* Adds internal spacing */
+  font-family: Arial, sans-serif; /* Default font family */
+}
+
+/* ---- Back Button ---- */
+/**
+* Styles for the back button, including hover effects for interaction feedback.
+*/
+.back-button2 {
+  position: absolute;
+  left: 20px; /* Aligns the button to the left */
+  padding: 10px 20px; /* Adds internal spacing */
+  font-size: 1.2em; /* Increases font size for readability */
+  border: 2px solid #007bff; /* Blue border */
+  background-color: white; /* White background */
+  color: #007bff; /* Blue text color */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for hover */
+  text-align: center; /* Centers text inside the button */
+  display: flex; /* Flexbox layout for alignment */
+  align-items: center; /* Centers text and icon vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+}
+
+/* Hover effect for the back button */
+.back-button2:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* ---- Search Input Section ---- */
+/**
+* Styles for the search input field and its container.
+*/
+.search-section {
+  margin: 30px 20px 20px; /* Adds spacing around the search section */
+  width: 80%; /* Limits the width for better layout */
+}
+
+/* Search input styling */
+.search-input {
+  padding: 10px; /* Internal spacing for input content */
+  font-size: 1em; /* Standard font size */
+  border: 1px solid; /* Thin border for structure */
+  border-radius: 5px; /* Slightly rounded corners */
+  width: 100%; /* Fills the width of the container */
+}
+
+/* ---- Results Section ---- */
+/**
+* Styles for the section displaying search results.
+*/
+.results-section {
+  border: 1px solid; /* Thin border for structure */
+  padding: 10px; /* Internal spacing */
+  border-radius: 5px; /* Rounded corners */
+  margin-left: 20px; /* Adds spacing on the left */
+  width: 80%; /* Limits the width */
+}
+
+/* List styling */
+.results-list {
+  list-style-type: none; /* Removes default list bullets */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+/* Individual result item styling */
+.result-item {
+  padding: 10px; /* Adds internal spacing for better click area */
+  border-bottom: 1px solid #ddd; /* Divider between items */
+  cursor: pointer; /* Pointer cursor for clickable items */
+}
+
+/* Removes border from the last list item */
+.result-item:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect for list items */
+.result-item:hover {
+  background-color: #e0e0e0; /* Light gray background on hover */
+  color: black; /* Black text on hover */
+}

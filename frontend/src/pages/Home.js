@@ -2,25 +2,59 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css'; // Import the CSS file
 
+/**
+ * Home component for selecting a vehicle type and navigating to various carpark-related functionalities.
+ *
+ * @component
+ * @returns {JSX.Element} The Home page interface.
+ *
+ * @description
+ * - Allows users to select a vehicle type (Car, Motorcycle, or Heavy Vehicle).
+ * - Provides navigation to search for carparks, view all carparks, or find nearby carparks.
+ * - Includes a help button for introductory guidance.
+ */
+
 const Home = () => {
   const [vehicleType, setVehicleType] = useState('Car');
   const navigate = useNavigate();
+
+  /**
+   * Handles changes to the selected vehicle type.
+   *
+   * @param {Object} event - The event object from the radio button input.
+   */
 
   const handleVehicleChange = (event) => {
     setVehicleType(event.target.value);
   };
 
+  /**
+   * Navigates to the search carpark page with the selected vehicle type.
+   */
+
   const handleSearchClick = () => {
     navigate('/Search', { state: { vehicleType } });
   };
+
+  /**
+   * Navigates to the all carparks listed page with the selected vehicle type.
+   */
 
   const handleAllCarparksClick = () => {
     navigate('/AllListed', { state: { vehicleType } });
   };
 
+   /**
+   * Navigates to the find nearby carparks page with the selected vehicle type.
+   */
+
   const handleNearbyCarparksClick = () => {
     navigate('/Find', { state: { vehicleType } });
   };
+
+  /**
+   * Navigates to the introductory page.
+   */
 
   const handleIntroductoryClick = () => {
     navigate('/');

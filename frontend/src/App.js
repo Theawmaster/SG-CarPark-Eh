@@ -8,14 +8,35 @@ import AllListed from './pages/AllListed';
 import Find from './pages/Find';
 import './styles/Global.css';
 
+/**
+ * Main application component for the SG CarPark Eh application.
+ *
+ * @component
+ * @returns {JSX.Element} The application structure with navigation, routes, and dark mode support.
+ *
+ * @description
+ * - Provides navigation between different pages: Introductory, Home, Search, Details, AllListed, and Find.
+ * - Includes a dark mode toggle feature that applies global styling changes.
+ * - Displays a logo and application title that navigate to the Home page when clicked.
+ * - Utilizes routes for managing different pages within the app.
+ */
+
 function App() {
   const [darkMode, setDarkMode] = useState(false); // State for dark mode
   const navigate = useNavigate();
+
+  /**
+   * Toggles the dark mode state and updates the global `body` class.
+   */
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
     document.body.classList.toggle('dark-mode', !darkMode); // Add or remove class on body
   };
+
+  /**
+   * Navigates to the Home page when the logo or title is clicked.
+   */
 
   const handleHomeClick = () => {
     navigate('/Home');
@@ -69,7 +90,7 @@ function App() {
             <span className="slider"></span>
           </label>
           <span style={{ color: 'var(--text-color)', marginTop: '5px' }}>
-            {darkMode ? ' Dark Mode' : ' Light Mode'}
+            {darkMode ? ' 🌙 Dark Mode' : ' 🔅 Light Mode'}
           </span>
         </div>
       </header>
@@ -91,6 +112,17 @@ function App() {
     </div>
   );
 }
+
+
+/**
+ * Application wrapper component to include React Router.
+ *
+ * @component
+ * @returns {JSX.Element} The application wrapped in a `Router`.
+ *
+ * @description
+ * This wrapper component ensures that routing is enabled throughout the application by wrapping the main `App` component inside a `Router`.
+ */
 
 function AppWrapper() {
   return (

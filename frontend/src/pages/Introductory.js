@@ -4,8 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Introductory.css'; // Import the CSS file
 
+/**
+ * Introductory component for displaying a guide about the carpark application.
+ *
+ * @component
+ * @returns {JSX.Element} The introductory guide interface.
+ *
+ * @description
+ * - Provides a brief introduction to the application's features.
+ * - Features a styled list explaining key functionalities.
+ * - Includes a button to navigate to the Home page after reading the guide.
+ */
+
 const Introductory = () => {
   const navigate = useNavigate();
+
+  /**
+     * Handles navigation to the Home page when the "OK" button is clicked.
+     */
 
   const handleOkClick = () => {
     navigate('/Home'); // Redirect to Home page
