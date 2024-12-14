@@ -44,7 +44,7 @@ const Find = () => {
 
                 try {
                     const response = await fetch(
-                        `http://localhost:4000/api/carparks?latitude=${latitude}&longitude=${longitude}&radius=3&vehicleType=${vehicleType}`
+                        `https://sg-carpark-eh.onrender.com/api/carparks?latitude=${latitude}&longitude=${longitude}&radius=3&vehicleType=${vehicleType}`
                     );
                     const data = await response.json();
 
