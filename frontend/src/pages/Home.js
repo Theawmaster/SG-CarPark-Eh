@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   const handleNearbyCarparksClick = () => {
-    alert('Find Nearby Carparks clicked, but have yet to be implemented...');
+    navigate('/Find', { state: { vehicleType } });
   };
 
   return (

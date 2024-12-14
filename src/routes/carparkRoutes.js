@@ -1,10 +1,13 @@
-import express from 'express';
+import express from "express";
+import { getNearbyCarparks} from "../controllers/carparkController.js";
 import { getCarparkDetailsWithAvailability } from '../controllers/carparkDetailsController.js';
 
 const router = express.Router();
 
-// Route for fetching carpark details with availability
-router.get('/carpark-info', getCarparkDetailsWithAvailability);
+// Endpoint for nearby carparks
+router.get("/carparks", getNearbyCarparks);
 
+// Endpoint for carpark details
+router.get('/carpark-info', getCarparkDetailsWithAvailability);
 
 export default router;
