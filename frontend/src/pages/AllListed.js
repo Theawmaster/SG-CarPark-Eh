@@ -40,7 +40,7 @@ const AllListed = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:4000/api/aggregated-carparks?vehicleType=${vehicleType}`
+          `https://sg-carpark-eh.onrender.com/api/aggregated-carparks?vehicleType=${vehicleType}`
         );
         const data = await response.json();
         setCarparks(data.results || []); // Ensure carparks is always an array
