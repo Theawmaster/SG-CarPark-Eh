@@ -23,52 +23,41 @@ SG CarPark Eh is a web application that helps users locate carparks in Singapore
 
 ## Project Structure
 
-SG-CarPark-Eh/
-├── frontend/                   # Frontend codebase
-│   ├── build/                  # Compiled production build
-│   ├── node_modules/           # Frontend dependencies
-│   ├── public/                 # Static assets (favicon, index.html)
-│   ├── src/                    # React source code
-│   │   ├── pages/              # React pages (AllListed, Details, Find, etc.)
-│   │   │   ├── AllListed.js
-│   │   │   ├── Details.js
-│   │   │   ├── Find.js
-│   │   │   ├── Home.js
-│   │   │   ├── Introductory.js
-│   │   │   ├── Search.js
-│   │   ├── styles/             # CSS files for components and pages
-│   │   │   ├── AllListed.css
-│   │   │   ├── Details.css
-│   │   │   ├── Find.css
-│   │   │   ├── Global.css
-│   │   │   ├── Home.css
-│   │   │   ├── Introductory.css
-│   │   │   ├── Search.css
-│   │   ├── App.css
-│   │   ├── App.js              # Main app component
-│   │   ├── App.test.js         # Test file for App
-│   │   ├── index.css           # Global CSS
-│   │   ├── index.js            # Renders React app
-│   │   ├── logo.svg            # App logo
-│   │   ├── reportWebVitals.js  # Performance monitoring
-│   │   ├── setupTests.js       # Test setup file
-│   ├── .gitignore
-│   ├── package-lock.json
-│   ├── package.json
-├── src/                        # Backend codebase
-│   ├── controllers/            # API controllers
-│   ├── routes/                 # API route definitions
-│   ├── services/               # API service utilities
-│   ├── tests/                  # Backend test files
-│   ├── app.js                  # Express app setup
-│   ├── server.js               # Server entry point
-├── node_modules/               # Backend dependencies
-├── .env                        # Environment variables
-├── .gitignore                  # Git ignore rules
-├── LICENSE                     # Project license
-├── package-lock.json
-├── package.json
-├── README.md                   # Project documentation
+SG-CarPark-Eh:
+  frontend: # Frontend codebase
+    build: # Compiled production build
+    public: # Static assets (favicon, index.html)
+    src: # React source code
+      pages: # React pages
+        - AllListed.js
+        - Details.js
+        - Find.js
+        - Home.js
+        - Introductory.js
+        - Search.js
+      styles: # CSS files
+        - AllListed.css
+        - Details.css
+        - Find.css
+        - Global.css
+        - Home.css
+        - Introductory.css
+        - Search.css
+      - App.js # Main app component
+      - index.js # Renders React app
+      - reportWebVitals.js # Performance monitoring
+    package.json:
+    .gitignore:
+  backend: # Backend codebase
+    controllers: # API controllers
+    routes: # API route definitions
+    services: # API utilities
+    - app.js # Express app setup
+    - server.js # Server entry point
+  .env: # Environment variables
+  LICENSE: # Project license
+  README.md: # Project documentation
+
 
 
 ---
