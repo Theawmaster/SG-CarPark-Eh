@@ -6,7 +6,7 @@ SG CarPark Eh is a web application that helps users locate carparks in Singapore
 
 ## Features
 
-- **Search Carparks**: Find carparks by street name or postal code.
+- **Search Carparks**: Find carparks by street name.
 - **Nearby Carparks**: Discover carparks within a 3km radius of your location.
 - **All Carparks Listed**: View a complete list of carparks.
 - **Responsive Design**: Optimized for desktop and mobile users.
@@ -87,6 +87,13 @@ SG-CarPark-Eh:
 
 ---
 
+## Framework
+
+#### React for frontend
+#### NodeJs and Express for backend and server
+
+---
+
 ## Responsive Design
 
 The application is optimized for various devices:
@@ -101,9 +108,9 @@ The application is optimized for various devices:
 
 Planned features and improvements:
 
-- Real-time parking availability and rates.
+- Merged with LTA and capital mall datasets for comprehensive coverage.
 - Filtering carparks by amenities (e.g., EV chargers, sheltered parking).
-- User authentication for personalized experiences.
+- User authentication for personalized experiences such as able to favourite carpark spots.
 
 ---
 
