@@ -1,6 +1,6 @@
 # SG CarPark Eh
 
-SG CarPark Eh is a web application that helps users locate carparks in Singapore. The app allows users to search by carpark name or postal code, view all listed carparks, and find carparks near their location.
+SG CarPark Eh is a web application that helps users locate carparks in Singapore. The app allows users to search by carpark name, view all listed carparks, and find carparks near their location.
 
 ---
 
@@ -117,9 +117,10 @@ This project is licensed under the [MIT License](LICENSE).
 
 - Data provided by the **Singapore URA Dataset**.
 - UI icons sourced from **Font Awesome**.
+- Developer by **Alvin Aw Yong**.
 
 ---
 
 ## Contact
 
-For questions or suggestions, please email: `your-email@example.com`
+For questions or suggestions, please email: `alvinawyong.aay@gmail.com`
