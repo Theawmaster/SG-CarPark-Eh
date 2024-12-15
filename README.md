@@ -18,7 +18,7 @@ SG CarPark Eh is a web application that helps users locate carparks in Singapore
 
 - **High-Fidelity Prototype**: [View the prototype](https://drive.google.com/file/d/1Sn-p7YYSFSlptsLWucjKFJlUS4dWzCjX/view?usp=sharing)
 - **Website-pages**: [View the product](https://drive.google.com/drive/folders/1-7zrAxvnYZfCo_Fa-rbf-6QQR7RyDiDJ?usp=sharing)
-- **Video**: [Visit the app](https://youtu.be/oLneiQjwsls)
+- **Video**: [Visit the demo](https://youtu.be/oLneiQjwsls)
 
 ---
 
