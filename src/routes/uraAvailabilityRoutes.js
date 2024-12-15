@@ -22,7 +22,7 @@ const BASE_URL = 'https://sg-carpark-eh.onrender.com';
  * @returns {Object} Real-time carpark availability data or an error message.
  */
 
-router.get(`${BASE_URL}/carpark-availability`, getCarparkAvailability);
+router.get(`/carpark-availability`, getCarparkAvailability);
 
 export default router;
 
