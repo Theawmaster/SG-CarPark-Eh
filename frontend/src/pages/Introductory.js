@@ -35,6 +35,7 @@ const Introductory = () => {
             Introduction Guide
         </h2>
         <ol className="intro-list">
+          <li>Display carpark available lots and parking rates based on vehicle type.</li>
           <li>Search function to search carpark by street name and postal code.</li>
 
           <li>A dropdown list to display all carparks listed in Singapore.</li>
