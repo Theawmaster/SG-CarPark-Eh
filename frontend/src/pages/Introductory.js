@@ -38,7 +38,7 @@ const Introductory = () => {
           <li>Search function to search carpark by street name and postal code.</li>
 
           <li>A dropdown list to display all carparks listed in Singapore.</li>
-          <li>Can search carpark nearby your location up to 2km.</li>
+          <li>Can search carpark nearby your location up to 3km.</li>
           <li><strong>Not all carparks are listed </strong>(future updates will include more).</li>
         </ol>
         <button onClick={handleOkClick} className="button1">OK</button>
