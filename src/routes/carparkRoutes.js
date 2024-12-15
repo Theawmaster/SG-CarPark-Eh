@@ -26,7 +26,7 @@ const BASE_URL = 'https://sg-carpark-eh.onrender.com';
  */
 
 // Endpoint for nearby carparks
-router.get(`${BASE_URL}/carparks`, getNearbyCarparks);
+router.get(`/carparks`, getNearbyCarparks);
 
 /**
  * GET /api/carpark-info
@@ -39,6 +39,6 @@ router.get(`${BASE_URL}/carparks`, getNearbyCarparks);
  */
 
 // Endpoint for carpark details
-router.get(`${BASE_URL}/carpark-info`, getCarparkDetailsWithAvailability);
+router.get(`/carpark-info`, getCarparkDetailsWithAvailability);
 
 export default router;

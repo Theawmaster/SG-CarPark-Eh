@@ -21,6 +21,6 @@ const BASE_URL = 'https://sg-carpark-eh.onrender.com';
  * @returns {Object} Season carpark details or an error message.
  */
 
-router.get(`${BASE_URL}/season-carpark-details`, getSeasonCarparkDetails);
+router.get(`/season-carpark-details`, getSeasonCarparkDetails);
 
 export default router;
