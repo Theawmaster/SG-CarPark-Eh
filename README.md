@@ -95,6 +95,13 @@ SG-CarPark-Eh:
 
 ---
 
+## Deployment
+
+#### Frontend: Vercel
+#### Backend: Render
+
+---
+
 ## Responsive Design
 
 The application is optimized for various devices:
